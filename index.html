@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vedansh Website Builder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+textarea {
+  width: 90%;
+  height: 100px;
+  margin: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #00ccff;
+  border: none;
+  cursor: pointer;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  margin-top: 20px;
+  border: 1px solid white;
+}
+</style>
+</head>
+
+<body>
+
+<h2>🌐 Vedansh Website Generator</h2>
+<p>Made by Vedansh 🔥</p>
+
+<textarea id="input" placeholder="Type: gym / food / school"></textarea><br>
+
+<button onclick="generate()">Generate Website</button>
+
+<iframe id="output"></iframe>
+
+<script>
+function generate() {
+  let text = document.getElementById("input").value.toLowerCase();
+
+  let title = "My Website";
+  let content = "Welcome to my website";
+
+  if(text.includes("gym")){
+    title = "Gym Website";
+    content = "Welcome to our gym 💪";
+  }
+  else if(text.includes("food")){
+    title = "Food Website";
+    content = "Delicious food available 🍔";
+  }
+  else if(text.includes("school")){
+    title = "School Website";
+    content = "Best education here 🎓";
+  }
+
+  let html = `
+  <html>
+  <head>
+  <title>${title}</title>
+  </head>
+  <body style="text-align:center; font-family:Arial;">
+  <h1>${title}</h1>
+  <p>${content}</p>
+
+  <hr>
+  <p>Made by Vedansh 🔥</p>
+  <a href="https://vedanshsrivastava182-cpu.github.io/website-generator/" target="_blank">
+  My Website Link
+  </a>
+
+  </body>
+  </html>
+  `;
+
+  document.getElementById("output").srcdoc = html;
+}
+</script>
+
+</body>
+</html>.
